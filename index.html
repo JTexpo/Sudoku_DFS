@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <!-- PyScript: https://github.com/pyscript/pyscript/releases -->
     <link rel="stylesheet" href="https://pyscript.net/releases/2023.05.1/pyscript.css" />
@@ -15,6 +16,7 @@
         "./sudoku_dfs/merge_move.py","./sudoku_dfs/possible_moves.py"]
     </py-config>
 </head>
+
 <body>
     <!-- Healthy Spacing -->
     <br>
@@ -45,402 +47,435 @@
     <!-- Graph RNN -->
     <main>
         <!-- TOP GRID-->
-        
+
         <div class="container">
             <div class="row">
                 <div class="col text-center">
                     <div class="h4 board-warnings" id="board-warnings"></div>
                 </div>
             </div>
-        </div>
-        
-        <div class="row">
-            <div class = "col-sm-1"></div>
-            <!-- BOX 1 -->
-            <div class = "col-sm-3" style="border: .5rem solid white;">
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku00">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku01">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku02">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku10">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku11">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku12">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku20">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku21">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku22">
-                    </div>
-                </div>
-                <br>
-            </div>
-            <!-- BOX 2 -->
-            <div class = "col-sm-3" style="border: .5rem solid white;">
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku03">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku04">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku05">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku13">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku14">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku15">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku23">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku24">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku25">
-                    </div>
-                </div>
-                <br>
-            </div>
-            <!-- BOX 3 -->
-            <div class = "col-sm-3" style="border: .5rem solid white;">
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku06">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku07">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku08">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku16">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku17">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku18">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku26">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku27">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku28">
-                    </div>
-                </div>
-                <br>
-            </div>
-            <div class="col-sm-1">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <button class="btn btn-success btn-block" py-click="solve()">Solve</button>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <button class="btn btn-success btn-block" py-click="reset()">Reset</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- MIDDLE GRID-->
-        <div class="row">
-            <div class = "col-sm-1"></div>
-            <!-- BOX 4 -->
-            <div class = "col-sm-3" style="border: .5rem solid white;">
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku30">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <!-- BOX 1 -->
+                <div class="col-sm-3" style="border: .5rem solid white;">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku00">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku01">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku02">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku31">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku10">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku11">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku12">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku32">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku20">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku21">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku22">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <!-- BOX 2 -->
+                <div class="col-sm-3" style="border: .5rem solid white;">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku03">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku04">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku05">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku13">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku14">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku15">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku23">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku24">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku25">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <!-- BOX 3 -->
+                <div class="col-sm-3" style="border: .5rem solid white;">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku06">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku07">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku08">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku16">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku17">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku18">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku26">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku27">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku28">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-sm-1">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button class="btn btn-success btn-block" py-click="solve()">Solve</button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button class="btn btn-success btn-block" py-click="reset()">Reset</button>
+                        </div>
                     </div>
                 </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku40">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku41">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku42">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku50">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku51">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku52">
-                    </div>
-                </div>
-                <br>
             </div>
-            <!-- BOX 5 -->
-            <div class = "col-sm-3" style="border: .5rem solid white;">
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku33">
+
+            <!-- MIDDLE GRID-->
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <!-- BOX 4 -->
+                <div class="col-sm-3" style="border: .5rem solid white;">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku30">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku31">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku32">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku34">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku40">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku41">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku42">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku35">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku50">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku51">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku52">
+                        </div>
                     </div>
+                    <br>
                 </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku43">
+                <!-- BOX 5 -->
+                <div class="col-sm-3" style="border: .5rem solid white;">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku33">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku34">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku35">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku44">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku43">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku44">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku45">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku45">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku53">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku54">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku55">
+                        </div>
                     </div>
+                    <br>
                 </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku53">
+                <!-- BOX 6 -->
+                <div class="col-sm-3" style="border: .5rem solid white;">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku36">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku37">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku38">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku54">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku46">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku47">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku48">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku55">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku56">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku57">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku58">
+                        </div>
                     </div>
+                    <br>
                 </div>
-                <br>
             </div>
-            <!-- BOX 6 -->
-            <div class = "col-sm-3" style="border: .5rem solid white;">
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku36">
+
+            <!-- BOTTOM GRID-->
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <!-- BOX 7 -->
+                <div class="col-sm-3" style="border: .5rem solid white;">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku60">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku61">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku62">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku37">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku70">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku71">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku72">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku38">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku80">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku81">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku82">
+                        </div>
                     </div>
+                    <br>
                 </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku46">
+                <!-- BOX 8 -->
+                <div class="col-sm-3" style="border: .5rem solid white;">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku63">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku64">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku65">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku47">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku73">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku74">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku75">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku48">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku83">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku84">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku85">
+                        </div>
                     </div>
+                    <br>
                 </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku56">
+                <!-- BOX 9 -->
+                <div class="col-sm-3" style="border: .5rem solid white;">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku66">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku67">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku68">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku57">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku76">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku77">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku78">
+                        </div>
                     </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku58">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku86">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku87">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku88">
+                        </div>
                     </div>
+                    <br>
                 </div>
-                <br>
+            </div>
+            <!-- Healthy Spacing -->
+            <br>
+            <br>
+            <br>
+            <!-- Explination -->
+            <!-- How to use this app -->
+            <div class="row">
+                <div class="h2 info-header">How to use this app</div>
+            </div>
+            <div class="row">
+                <div class="h4 info-body">
+                    When you load or reload the page, you'll be greeted with a blank Sudoku board. <br><br>
+                    To solve a Sudoku puzzle, enter the current state of the board and click the 'solve' button.
+                    <br><br>
+                    If you want to start fresh, simply click the 'reset' button to clear the board. <br><br>
+                </div>
+            </div>
+            <!-- What is a DFS -->
+            <div class="row">
+                <div class="h2 info-header">What is a DFS?</div>
+            </div>
+            <div class="row">
+                <div class="h4 info-body">
+                    DFS, or Depth First Search, is an algorithm used for traversing through various possible outcomes,
+                    backtracking only when a dead end is encountered.
+                    It's akin to how we solve mazes with pen and paper, but its applications extend far beyond visual
+                    mazes. <br><br>
+                    In the realm of Artificial Intelligence, DFS proves to be a valuable tool.
+                    In this case, we employ the DFS algorithm to tackle Sudoku puzzles.
+                    The algorithm navigates through predicted sequences of numbers until it either arrives at a solution
+                    or identifies an invalid board state.
+                </div>
             </div>
         </div>
-
-        <!-- BOTTOM GRID-->
-        <div class="row">
-            <div class = "col-sm-1"></div>
-            <!-- BOX 7 -->
-            <div class = "col-sm-3" style="border: .5rem solid white;">
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku60">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku61">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku62">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku70">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku71">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku72">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku80">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku81">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku82">
-                    </div>
-                </div>
-                <br>
-            </div>
-            <!-- BOX 8 -->
-            <div class = "col-sm-3" style="border: .5rem solid white;">
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku63">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku64">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku65">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku73">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku74">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku75">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku83">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku84">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku85">
-                    </div>
-                </div>
-                <br>
-            </div>
-            <!-- BOX 9 -->
-            <div class = "col-sm-3" style="border: .5rem solid white;">
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku66">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku67">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku68">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku76">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku77">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku78">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku86">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku87">
-                    </div>
-                    <div class = "col-sm-4">
-                        <input type="text" class="form-control" aria-describedby="basic-addon3" id="sudoku88">
-                    </div>
-                </div>
-                <br>
-            </div>
         </div>
-
     </main>
     <!-- Healthy Spacing -->
     <br>
@@ -457,4 +492,5 @@
     </footer>
     <py-script src="./main.py"></py-script>
 </body>
+
 </html>
